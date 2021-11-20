@@ -18,3 +18,12 @@ x_test = x_test / 255
 # Instead, we want each label to be an array with on element set to 1 and and the rest set to 0.
 y_train = keras.utils.to_categorical(y_train, 10)
 y_test = keras.utils.to_categorical(y_test, 10)
+
+# create model and add layer
+model = Sequential()
+model.add(Dense(512, activation="relu", input_shape=(32, 32, 3)))
+model.add(Dense(10, activation="softmax"))
+
+# print summary of model
+print("model.summary()")
+model.summary()
